@@ -15,4 +15,5 @@ public class Speler {
     private KlasseKaart klasseKaart;
     private RasKaart rasKaart;
     private ArmorSet armorSet;
+    private WapenSet wapenSet;
 }
