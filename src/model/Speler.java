@@ -1,5 +1,6 @@
 package model;
 
+import exceptions.VerkeerdeKaartSoortException;
 import model.kaarten.deurkaarten.KlasseKaart;
 import model.kaarten.deurkaarten.RasKaart;
 import model.kaarten.treasurekaarten.WapenKaart;
@@ -57,6 +58,8 @@ public class Speler {
     public void setKaartAlsKlasseKaart(Kaart kaart){
         if(kaart.getClass().equals(KlasseKaart.class)){
 
+        }else {
+            throw new VerkeerdeKaartSoortException();
         }
     }
 
