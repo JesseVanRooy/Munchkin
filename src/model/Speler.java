@@ -2,6 +2,7 @@ package model;
 
 import model.kaarten.deurkaarten.KlasseKaart;
 import model.kaarten.deurkaarten.RasKaart;
+import model.kaarten.treasurekaarten.WapenKaart;
 
 import java.util.List;
 
@@ -13,4 +14,5 @@ public class Speler {
     private List<Kaart> rugzak;
     private KlasseKaart klasseKaart;
     private RasKaart rasKaart;
+    private ArmorSet armorSet;
 }
