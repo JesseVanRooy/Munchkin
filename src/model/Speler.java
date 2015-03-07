@@ -45,6 +45,10 @@ public class Speler {
         this.rugzak.add(kaart);
     }
 
+    public void verwijderKaart(Kaart kaart) {
+        this.rugzak.remove(kaart);
+    }
+
     public Kaart getKaart(int index){
         return rugzak.get(index);
     }
@@ -57,7 +61,8 @@ public class Speler {
 
     public void setKaartAlsKlasseKaart(Kaart kaart){
         if(kaart.getClass().equals(KlasseKaart.class)){
-
+            this.klasseKaart = (KlasseKaart)kaart;
+            this.rugzak.remove(kaart);
         }else {
             throw new VerkeerdeKaartSoortException();
         }
