@@ -1,7 +1,9 @@
 package model.kaarten.treasurekaarten;
 
+import model.kaarten.TreasureKaart;
+
 /**
  * Created by Jesse on 6/03/2015.
  */
-public class ArmorKaart {
+public class ArmorKaart extends TreasureKaart{
 }
