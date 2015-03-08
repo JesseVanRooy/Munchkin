@@ -5,7 +5,7 @@ import model.Kaart;
 /**
  * Created by Jesse on 6/03/2015.
  */
-public class TreasureKaart extends Kaart{
+public abstract class TreasureKaart extends Kaart{
 
     private int waarde;
 

@@ -3,7 +3,7 @@ package model;
 /**
  * Created by Jesse on 6/03/2015.
  */
-public class Kaart {
+public abstract class Kaart {
     private String naam;
 
     public Kaart(String naam) {
@@ -13,4 +13,6 @@ public class Kaart {
     public String getNaam() {
         return naam;
     }
+
+    public abstract void fromString();
 }
