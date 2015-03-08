@@ -1,7 +1,9 @@
 package model.kaarten.deurkaarten;
 
+import model.kaarten.DeurKaart;
+
 /**
  * Created by Jesse on 6/03/2015.
  */
-public class RasKaart {
+public class RasKaart extends DeurKaart{
 }

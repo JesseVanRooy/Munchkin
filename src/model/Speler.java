@@ -57,9 +57,22 @@ public class Speler {
         return this.rugzak.size()>=5;
     }
 
+    public List<Kaart> getRugzak() {
+        return rugzak;
+    }
+
     /* klasseKaart methodes */
 
     public void setKaartAlsKlasseKaart(Kaart kaart){
+        if(kaart.getClass().equals(KlasseKaart.class)){
+            this.klasseKaart = (KlasseKaart)kaart;
+        }else {
+            throw new VerkeerdeKaartSoortException();
+        }
+    }
+
+    public void setKaartAlsKlasseKaart(int index){
+        Kaart kaart = getKaart(index);
         if(kaart.getClass().equals(KlasseKaart.class)){
             this.klasseKaart = (KlasseKaart)kaart;
             this.rugzak.remove(kaart);
@@ -74,11 +87,37 @@ public class Speler {
 
     /* rasKaart methodes */
 
+    public void setKaartAlsRasKaart(Kaart kaart){
+        if(kaart.getClass().equals(RasKaart.class)){
+            this.rasKaart = (RasKaart)kaart;
+        }else {
+            throw new VerkeerdeKaartSoortException();
+        }
+    }
 
+    public void setKaartAlsRasKaart(int index){
+        Kaart kaart = getKaart(index);
+        if(kaart.getClass().equals(RasKaart.class)){
+            this.rasKaart = (RasKaart)kaart;
+            this.rugzak.remove(kaart);
+        }else {
+            throw new VerkeerdeKaartSoortException();
+        }
+    }
+
+    public RasKaart getRasKaart() {
+        return rasKaart;
+    }
 
     /* armorSet methodes */
 
-
+    public ArmorSet getArmorSet() {
+        return armorSet;
+    }
 
     /* wapenSet methodes */
+
+    public WapenSet getWapenSet() {
+        return wapenSet;
+    }
 }
