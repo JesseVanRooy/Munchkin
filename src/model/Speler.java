@@ -26,7 +26,7 @@ public class Speler {
     public Speler (List<Kaart> rugzak){
         this.level = new Level();
         this.rugzak = rugzak;
-        this.armorSet = new ArmorSet();
+        this.armorSet = new ArmorSet(this);
         this.wapenSet = new WapenSet();
 
     }

@@ -9,4 +9,22 @@ import java.util.List;
  */
 public class ArmorSet {
     private ArmorKaart helm, chestPlate, pants, boots;
+
+    private Speler speler;
+
+    public ArmorSet(Speler speler){
+        this.speler = speler;
+    }
+
+    public void setHelm(Kaart kaart){
+        if((kaart.getClass().equals(ArmorKaart.class))){
+            ArmorKaart armorKaart = (ArmorKaart)kaart;
+            if(armorKaart.getType() == ArmorKaart.Type.HELM){
+                if(helm != null){
+                    speler.getRugzak().add(this.helm);
+                }
+                this.helm = armorKaart;
+            }
+        }
+    }
 }

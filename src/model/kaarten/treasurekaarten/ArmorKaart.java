@@ -7,8 +7,22 @@ import model.kaarten.TreasureKaart;
  */
 public class ArmorKaart extends TreasureKaart{
 
-    public ArmorKaart(String naam, int waarde) {
+    public enum Type{
+        HELM,
+        CHESTPLATE,
+        PANTS,
+        BOOTS
+    }
+
+    private Type type;
+
+    public ArmorKaart(String naam, int waarde, Type type) {
         super(naam, waarde);
+        this.type = type;
+    }
+
+    public Type getType() {
+        return type;
     }
 
     @Override

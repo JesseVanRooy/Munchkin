@@ -1,0 +1,2 @@
+1. Op voorhand bepaalde zaken die via tekstbestand worden ingeladen worden in .predef bestanden gestoken.
+2. Savefiles krijgen de extensie .sav
