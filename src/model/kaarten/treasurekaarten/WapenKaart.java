@@ -7,12 +7,15 @@ import model.kaarten.TreasureKaart;
  */
 public class WapenKaart extends TreasureKaart{
 
-    public WapenKaart(String naam, int waarde) {
+    private int aantalGebruikteHanden;
+
+    public WapenKaart(String naam, int waarde, int aantalGebruikteHanden) {
         super(naam, waarde);
+        this.aantalGebruikteHanden = aantalGebruikteHanden;
     }
 
-    @Override
-    public void fromString() {
-
+    public int getAantalGebruikteHanden() {
+        return aantalGebruikteHanden;
     }
+
 }

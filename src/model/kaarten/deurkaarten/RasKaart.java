@@ -11,8 +11,4 @@ public class RasKaart extends DeurKaart{
         super(naam);
     }
 
-    @Override
-    public void fromString() {
-
-    }
 }

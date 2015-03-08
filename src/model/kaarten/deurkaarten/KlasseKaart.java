@@ -11,8 +11,4 @@ public class KlasseKaart extends DeurKaart{
         super(naam);
     }
 
-    @Override
-    public void fromString() {
-
-    }
 }

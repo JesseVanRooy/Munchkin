@@ -25,8 +25,4 @@ public class ArmorKaart extends TreasureKaart{
         return type;
     }
 
-    @Override
-    public void fromString() {
-
-    }
 }

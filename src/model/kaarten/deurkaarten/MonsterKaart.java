@@ -11,8 +11,4 @@ public class MonsterKaart extends DeurKaart{
         super(naam);
     }
 
-    @Override
-    public void fromString() {
-
-    }
 }

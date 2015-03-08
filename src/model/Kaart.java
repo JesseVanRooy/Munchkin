@@ -14,5 +14,4 @@ public abstract class Kaart {
         return naam;
     }
 
-    public abstract void fromString();
 }
