@@ -2,6 +2,7 @@ package model;
 
 import model.kaarten.TreasureKaart;
 import model.kaarten.treasurekaarten.ArmorKaart;
+import model.kaarten.treasurekaarten.GoUpALevelKaart;
 import model.kaarten.treasurekaarten.WapenKaart;
 
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ public class TreasureStapel {
 
     private void vullen(){
         savefile = new Savefile(BESTANDSNAAM);
-        String inhoud = savefile.leesBestand().replaceAll("\n","");
+        String inhoud = savefile.leesBestand().replaceAll("\n", "");
         String[] kaarten = inhoud.split(";");
         List<String[]> kaartAttributen = new ArrayList<String[]>();
 
@@ -35,7 +36,8 @@ public class TreasureStapel {
         for(String[] attributen : kaartAttributen){
             switch (Integer.parseInt(attributen[0])){
                 case 4 : this.stapel.add(new ArmorKaart(attributen[1],Integer.parseInt(attributen[2]), ArmorKaart.Type.valueOf(attributen[3]))) ;break;
-                case 5 : this.stapel.add(new WapenKaart(attributen[1],Integer.parseInt(attributen[2]),Integer.parseInt(attributen[3]))) ;break;
+                case 5 : this.stapel.add(new GoUpALevelKaart(attributen[1],Integer.parseInt(attributen[2])));
+                case 6 : this.stapel.add(new WapenKaart(attributen[1],Integer.parseInt(attributen[2]),Integer.parseInt(attributen[3]))) ;break;
             }
         }
 
