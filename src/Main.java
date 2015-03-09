@@ -1,6 +1,4 @@
-import controller.MunchkinController;
-import model.DeurStapel;
-import model.TreasureStapel;
+import model.server.DeurStapel;
 
 /**
  * Created by Jesse on 6/03/2015.

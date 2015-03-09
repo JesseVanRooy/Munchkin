@@ -1,10 +1,11 @@
-package model;
+package model.server;
 
-import model.kaarten.DeurKaart;
-import model.kaarten.deurkaarten.CurseKaart;
-import model.kaarten.deurkaarten.KlasseKaart;
-import model.kaarten.deurkaarten.MonsterKaart;
-import model.kaarten.deurkaarten.RasKaart;
+import model.client.Kaart;
+import model.client.kaarten.DeurKaart;
+import model.client.kaarten.deurkaarten.CurseKaart;
+import model.client.kaarten.deurkaarten.KlasseKaart;
+import model.client.kaarten.deurkaarten.MonsterKaart;
+import model.client.kaarten.deurkaarten.RasKaart;
 
 import java.util.ArrayList;
 import java.util.List;
