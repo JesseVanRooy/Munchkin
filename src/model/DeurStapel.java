@@ -5,8 +5,6 @@ import model.kaarten.deurkaarten.CurseKaart;
 import model.kaarten.deurkaarten.KlasseKaart;
 import model.kaarten.deurkaarten.MonsterKaart;
 import model.kaarten.deurkaarten.RasKaart;
-import model.kaarten.treasurekaarten.ArmorKaart;
-import model.kaarten.treasurekaarten.WapenKaart;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +26,7 @@ public class DeurStapel {
 
     private void vullen(){
         savefile = new Savefile(BESTANDSNAAM);
-        String inhoud = savefile.leesBestand();
+        String inhoud = savefile.leesBestand().replaceAll("\n","");
         String[] kaarten = inhoud.split(";");
         List<String[]> kaartAttributen = new ArrayList<String[]>();
         for(String kaart : kaarten){

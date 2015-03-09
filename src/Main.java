@@ -12,7 +12,5 @@ public class Main {
         DeurStapel deurStapel = new DeurStapel();
         deurStapel.print();
 
-        TreasureStapel treasureStapel = new TreasureStapel();
-        treasureStapel.print();
     }
 }

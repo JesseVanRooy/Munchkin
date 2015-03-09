@@ -1,10 +1,6 @@
 package model;
 
 import model.kaarten.TreasureKaart;
-import model.kaarten.deurkaarten.CurseKaart;
-import model.kaarten.deurkaarten.KlasseKaart;
-import model.kaarten.deurkaarten.MonsterKaart;
-import model.kaarten.deurkaarten.RasKaart;
 import model.kaarten.treasurekaarten.ArmorKaart;
 import model.kaarten.treasurekaarten.WapenKaart;
 
@@ -28,7 +24,7 @@ public class TreasureStapel {
 
     private void vullen(){
         savefile = new Savefile(BESTANDSNAAM);
-        String inhoud = savefile.leesBestand();
+        String inhoud = savefile.leesBestand().replaceAll("\n","");
         String[] kaarten = inhoud.split(";");
         List<String[]> kaartAttributen = new ArrayList<String[]>();
 
