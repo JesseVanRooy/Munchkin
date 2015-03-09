@@ -21,7 +21,10 @@ public class ServerController {
     private ServerSocket serverSocket;
     private List<Socket> spelerSockets;
 
-    public ServerController(){
+    private MunchkinController munchkinController;
+
+    public ServerController(MunchkinController munchkinController){
+        this.munchkinController = munchkinController;
         deurStapel = new DeurStapel();
         treasureStapel = new TreasureStapel();
         spelers = new ArrayList<Speler>();

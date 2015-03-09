@@ -9,8 +9,12 @@ public class MunchkinController {
     private ServerController serverController;
 
     public MunchkinController(){
-        this.clientController = new ClientController();
+        this.clientController = new ClientController(this);
 
+    }
+
+    public void maakServerAan(){
+        this.serverController = new ServerController(this);
     }
 
     public ClientController getClientController() {

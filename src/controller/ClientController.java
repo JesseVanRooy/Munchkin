@@ -8,8 +8,10 @@ import model.client.Speler;
 public class ClientController {
 
     private Speler speler;
+    private MunchkinController munchkinController;
 
-    public ClientController(){
+    public ClientController(MunchkinController munchkinController){
+        this.munchkinController = munchkinController;
         setUpModel();
         setUpView();
     }
