@@ -1,4 +1,4 @@
-package model;
+package model.client;
 
 /**
  * Created by Jesse on 6/03/2015.

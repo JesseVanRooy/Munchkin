@@ -1,9 +1,10 @@
-package model;
+package model.server;
 
-import model.kaarten.TreasureKaart;
-import model.kaarten.treasurekaarten.ArmorKaart;
-import model.kaarten.treasurekaarten.GoUpALevelKaart;
-import model.kaarten.treasurekaarten.WapenKaart;
+import model.client.Kaart;
+import model.client.kaarten.TreasureKaart;
+import model.client.kaarten.treasurekaarten.ArmorKaart;
+import model.client.kaarten.treasurekaarten.GoUpALevelKaart;
+import model.client.kaarten.treasurekaarten.WapenKaart;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,6 @@
-package model.kaarten.deurkaarten;
+package model.client.kaarten.deurkaarten;
 
-import model.kaarten.DeurKaart;
+import model.client.kaarten.DeurKaart;
 
 /**
  * Created by Jesse on 6/03/2015.

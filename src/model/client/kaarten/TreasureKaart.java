@@ -1,6 +1,6 @@
-package model.kaarten;
+package model.client.kaarten;
 
-import model.Kaart;
+import model.client.Kaart;
 
 /**
  * Created by Jesse on 6/03/2015.

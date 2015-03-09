@@ -1,9 +1,7 @@
-package model;
+package model.client;
 
 import exceptions.VerkeerdeKaartSoortException;
-import model.kaarten.treasurekaarten.ArmorKaart;
-
-import java.util.List;
+import model.client.kaarten.treasurekaarten.ArmorKaart;
 
 /**
  * Created by Jesse on 6/03/2015.

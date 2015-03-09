@@ -1,9 +1,12 @@
-package model;
+package model.client;
 
 import exceptions.VerkeerdeKaartSoortException;
-import model.kaarten.deurkaarten.KlasseKaart;
-import model.kaarten.deurkaarten.RasKaart;
-import model.kaarten.treasurekaarten.WapenKaart;
+import model.client.WapenSet;
+import model.client.ArmorSet;
+import model.client.Kaart;
+import model.client.Level;
+import model.client.kaarten.deurkaarten.KlasseKaart;
+import model.client.kaarten.deurkaarten.RasKaart;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,6 @@
-package model.kaarten.treasurekaarten;
+package model.client.kaarten.treasurekaarten;
 
-import model.kaarten.TreasureKaart;
+import model.client.kaarten.TreasureKaart;
 
 /**
  * Created by Jesse on 6/03/2015.
