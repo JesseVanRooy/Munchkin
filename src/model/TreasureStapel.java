@@ -30,9 +30,10 @@ public class TreasureStapel {
         savefile = new Savefile(BESTANDSNAAM);
         String inhoud = savefile.leesBestand();
         String[] kaarten = inhoud.split(";");
-        String[][] kaartAttributen = new String[kaarten.length][];
-        for(int i = 0; i<kaarten.length; i++){
-            kaartAttributen[i] = kaarten[i].split(",");
+        List<String[]> kaartAttributen = new ArrayList<String[]>();
+
+        for(String kaart : kaarten){
+            kaartAttributen.add(kaart.split(","));
         }
 
         for(String[] attributen : kaartAttributen){
@@ -47,7 +48,8 @@ public class TreasureStapel {
     private void schudden(){
         Random random = new Random();
         List<TreasureKaart> tempKaarten = new ArrayList<TreasureKaart>();
-        for(int i=0; i<stapel.size();i++){
+        int loopGrootte = stapel.size();
+        for(int i=0; i<loopGrootte;i++){
             TreasureKaart kaart = stapel.get(random.nextInt(stapel.size()));
             tempKaarten.add(kaart);
             stapel.remove(kaart);
