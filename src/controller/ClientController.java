@@ -1,6 +1,8 @@
 package controller;
 
+import model.client.ServerConnectie;
 import model.client.Speler;
+import model.server.ClientConnectie;
 
 import javax.swing.*;
 import java.net.Socket;
@@ -9,22 +11,26 @@ import java.net.Socket;
  * Created by Jesse on 9/03/2015.
  */
 public class ClientController {
+    public static final int PORT = 1337;
 
     private Speler speler;
     private MunchkinController munchkinController;
-    private Socket serverVerbinding;
-    private boolean host;
+    private ServerConnectie serverConnectie;
+    private boolean isHost;
 
     public ClientController(MunchkinController munchkinController){
         this.munchkinController = munchkinController;
-        setUpModel();
-        setUpView();
+        this.isHost = false;
     }
 
-
-    private void setUpModel(){
-        this.speler = new Speler(JOptionPane.showInputDialog("Geef de naam in : "));
+    public void joinServer(String host){
+        this.serverConnectie = new ServerConnectie(host,PORT);
     }
 
-    private void setUpView(){}
+    public void hostServer(){
+        this.munchkinController.maakServerAan();
+        this.serverConnectie = new ServerConnectie(PORT);
+        this.isHost = true;
+    }
+
 }

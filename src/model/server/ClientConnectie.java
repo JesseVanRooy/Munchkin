@@ -11,45 +11,35 @@ import java.net.Socket;
  */
 public class ClientConnectie {
     private Socket socket;
-    private InputStreamReader input;
-    private BufferedReader bufferedInput;
-    private PrintStream output;
-    private Speler speler;
+    private PrintStream outputStream;
+    private InputStream inputStream;
+    private BufferedInputStream bufferedinput;
 
-    public ClientConnectie(Socket socket) throws IOException{
+    public ClientConnectie(Socket socket){
         this.socket = socket;
-        this.input = new InputStreamReader(socket.getInputStream());
-        this.bufferedInput = new BufferedReader(input);
-        this.output = new PrintStream(socket.getOutputStream());
-        lees();
-    }
-
-    private void lees() throws IOException{
-        String input = bufferedInput.readLine();
-        if(input != null){
-            System.out.println("SERVER : " + input);
-            output.println("bericht ontvangen");
+        try {
+            this.inputStream = socket.getInputStream();
+            this.bufferedinput = new BufferedInputStream(inputStream);
+            this.outputStream = new PrintStream(socket.getOutputStream());
+        }catch (IOException i){
+            i.printStackTrace();
         }
+
     }
 
-    public void getSpelerInformatie(){
-        this.schrijf("SPELER.INFORMATIE");
+    public Socket getSocket() {
+        return socket;
     }
 
-    public void schrijf(String bericht){
-        output.println(bericht);
+    public PrintStream getOutputStream() {
+        return outputStream;
     }
 
-    public void stopCommunicatie() throws IOException{
-        socket.shutdownInput();
-        socket.shutdownOutput();
+    public InputStream getInputStream() {
+        return inputStream;
     }
 
-    public void sluitAf() throws IOException{
-        socket.close();
-    }
-
-    public Speler getSpeler() {
-        return speler;
+    public BufferedInputStream getBufferedinput() {
+        return bufferedinput;
     }
 }

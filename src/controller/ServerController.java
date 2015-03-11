@@ -2,6 +2,7 @@ package controller;
 
 import model.server.DeurStapel;
 import model.client.Speler;
+import model.server.Server;
 import model.server.TreasureStapel;
 
 import java.io.IOException;
@@ -16,10 +17,7 @@ import java.util.List;
 public class ServerController {
     private DeurStapel deurStapel;
     private TreasureStapel treasureStapel;
-    private List<Speler> spelers;
-
-    private ServerSocket serverSocket;
-    private List<Socket> spelerSockets;
+    private Server server;
 
     private MunchkinController munchkinController;
 
@@ -27,22 +25,11 @@ public class ServerController {
         this.munchkinController = munchkinController;
         deurStapel = new DeurStapel();
         treasureStapel = new TreasureStapel();
-        spelers = new ArrayList<Speler>();
-        spelerSockets = new ArrayList<Socket>();
+        this.server = new Server();
     }
 
-    private void setUpServerSocket(){
-        try {
-            serverSocket = new ServerSocket(1337);
-
-        } catch (IOException i){
-            i.printStackTrace();
-        }
-
-    }
-
-    public void bindSpeler(){
-
+    public Server getServer() {
+        return server;
     }
 
     private void beurtRol(){}
