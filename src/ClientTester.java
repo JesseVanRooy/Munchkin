@@ -8,5 +8,4 @@ public class ClientTester {
         MunchkinController munchkinController = new MunchkinController();
         munchkinController.getClientController().joinServer("127.0.0.1");
     }
-
 }
