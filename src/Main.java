@@ -7,10 +7,10 @@ import model.server.DeurStapel;
 public class Main {
     public static void main(String[] args) {
         MunchkinController munchkinController1 = new MunchkinController();
-        munchkinController1.getClientController().hostServer();
+        //munchkinController1.getClientController().hostServer();
 
-        MunchkinController munchkinController2 = new MunchkinController();
-        munchkinController2.getClientController().joinServer("127.0.0.1");
+        //MunchkinController munchkinController2 = new MunchkinController();
+        //munchkinController2.getClientController().joinServer("127.0.0.1");
 
     }
 }

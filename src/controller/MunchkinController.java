@@ -1,5 +1,7 @@
 package controller;
 
+import view.SplashScreen;
+
 /**
  * Created by Jesse on 6/03/2015.
  */
@@ -9,8 +11,8 @@ public class MunchkinController {
     private ServerController serverController;
 
     public MunchkinController(){
+        new SplashScreen();
         this.clientController = new ClientController(this);
-
     }
 
     public void maakServerAan(){
