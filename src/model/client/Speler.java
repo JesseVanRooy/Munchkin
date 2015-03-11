@@ -15,6 +15,7 @@ import java.util.List;
  * Created by Jesse on 6/03/2015.
  */
 public class Speler {
+    private String naam;
     private Level level;
     private List<Kaart> rugzak;
     private KlasseKaart klasseKaart;
@@ -22,11 +23,12 @@ public class Speler {
     private ArmorSet armorSet;
     private WapenSet wapenSet;
 
-    public Speler (){
-        this(new ArrayList<Kaart>());
+    public Speler (String naam){
+        this(naam,new ArrayList<Kaart>());
     }
 
-    public Speler (List<Kaart> rugzak){
+    public Speler (String naam, List<Kaart> rugzak){
+        this.naam = naam;
         this.level = new Level();
         this.rugzak = rugzak;
         this.armorSet = new ArmorSet(this);
@@ -35,6 +37,10 @@ public class Speler {
     }
 
     /* specifieke speler methodes */
+
+    public String getNaam() {
+        return naam;
+    }
 
     /* level methodes */
 
