@@ -1,5 +1,6 @@
 package controller;
 
+import model.server.ClientConnectie;
 import view.SplashScreen;
 
 /**

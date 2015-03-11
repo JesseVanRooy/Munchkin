@@ -14,17 +14,18 @@ import java.util.List;
 /**
  * Created by Jesse on 9/03/2015.
  */
-public class ServerController {
+public class ServerController{
+
+    private MunchkinController munchkinController;
+
     private DeurStapel deurStapel;
     private TreasureStapel treasureStapel;
     private Server server;
 
-    private MunchkinController munchkinController;
-
     public ServerController(MunchkinController munchkinController){
         this.munchkinController = munchkinController;
-        deurStapel = new DeurStapel();
-        treasureStapel = new TreasureStapel();
+        this.deurStapel = new DeurStapel();
+        this.treasureStapel = new TreasureStapel();
         this.server = new Server();
     }
 

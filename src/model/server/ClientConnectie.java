@@ -42,4 +42,9 @@ public class ClientConnectie {
     public BufferedInputStream getBufferedinput() {
         return bufferedinput;
     }
+
+    @Override
+    public String toString(){
+        return socket.getInetAddress().toString();
+    }
 }

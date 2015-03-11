@@ -49,4 +49,14 @@ public class Server {
         }
 
     }
+
+    public ClientConnectie getClientConnectie(int index){
+        return clientConnecties.get(index);
+    }
+
+    public void printConnecties(){
+        for(ClientConnectie clientConnectie : clientConnecties){
+            System.out.println(clientConnectie);
+        }
+    }
 }
