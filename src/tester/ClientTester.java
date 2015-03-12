@@ -1,3 +1,5 @@
+package tester;
+
 import controller.MunchkinController;
 
 /**
