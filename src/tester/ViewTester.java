@@ -10,6 +10,6 @@ import view.server.ServerScherm;
 public class ViewTester {
     public static void main(String[] args) {
         new SplashScreen();
-        ClientScherm clientScherm = new ClientScherm(null);
+        new ClientScherm(null);
     }
 }

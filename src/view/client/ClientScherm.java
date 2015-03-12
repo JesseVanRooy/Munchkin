@@ -5,6 +5,7 @@ import controller.ServerController;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
@@ -14,6 +15,7 @@ import java.io.IOException;
 public class ClientScherm extends JFrame {
     private ClientController clientController;
     private MenuBar menuBar;
+    private TafelPaneel tafelPaneel;
 
     public ClientScherm(ClientController clientController){
         super("Munchkin Client");
@@ -21,6 +23,7 @@ public class ClientScherm extends JFrame {
         this.menuBar = new MenuBar();
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(1600,960);
+        setPreferredSize(new Dimension(1600, 960));
         try {
             setIconImage(ImageIO.read(new File("res/images/andere/clientLogo.png")));
         } catch (IOException e) {
@@ -34,9 +37,13 @@ public class ClientScherm extends JFrame {
         setVisible(true);
     }
 
-    private void maakComponenten(){}
+    private void maakComponenten(){
+        this.tafelPaneel = new TafelPaneel(clientController);
+    }
 
-    private void maakLayout(){}
+    private void maakLayout(){
+        add(tafelPaneel, BorderLayout.CENTER);
+    }
 
     private void behandelEvents(){}
 }
