@@ -54,6 +54,14 @@ public class Server {
         return clientConnecties.get(index);
     }
 
+    public String[] getConnecties (){
+        String[] connecties = new String[clientConnecties.size()];
+        for(int i=0;i<connecties.length;i++){
+            connecties[i] = clientConnecties.get(i).toString();
+        }
+        return connecties;
+    }
+
     public void printConnecties(){
         for(ClientConnectie clientConnectie : clientConnecties){
             System.out.println(clientConnectie);

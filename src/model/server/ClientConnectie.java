@@ -45,6 +45,6 @@ public class ClientConnectie {
 
     @Override
     public String toString(){
-        return socket.getInetAddress().toString();
+        return socket.getInetAddress().toString() + " : " + socket.getLocalPort();
     }
 }
