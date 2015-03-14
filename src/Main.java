@@ -1,6 +1,4 @@
 import controller.MunchkinController;
-import model.server.DeurStapel;
-import view.server.ServerScherm;
 
 /**
  * Created by Jesse on 6/03/2015.
