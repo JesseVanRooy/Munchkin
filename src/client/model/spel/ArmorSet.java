@@ -1,7 +1,7 @@
 package client.model.spel;
 
+import client.Client;
 import client.exceptions.VerkeerdeKaartSoortException;
-import model.client.Client;
 import client.model.spel.kaarten.treasurekaarten.ArmorKaart;
 
 /**
@@ -21,7 +21,7 @@ public class ArmorSet {
             ArmorKaart armorKaart = (ArmorKaart)kaart;
             if(armorKaart.getType() == ArmorKaart.Type.HELM){
                 if(helm != null){
-                    client.getRugzak().add(this.helm);
+                    //client.getRugzak().add(this.helm);
                 }
                 this.helm = armorKaart;
             }
@@ -34,7 +34,7 @@ public class ArmorSet {
             ArmorKaart armorKaart = (ArmorKaart)kaart;
             if(armorKaart.getType() == ArmorKaart.Type.CHESTPLATE){
                 if(chestPlate != null){
-                    client.getRugzak().add(this.chestPlate);
+                    //client.getRugzak().add(this.chestPlate);
                 }
                 this.chestPlate = armorKaart;
             }
@@ -47,7 +47,7 @@ public class ArmorSet {
             ArmorKaart armorKaart = (ArmorKaart)kaart;
             if(armorKaart.getType() == ArmorKaart.Type.PANTS){
                 if(pants != null){
-                    client.getRugzak().add(this.pants);
+                    //client.getRugzak().add(this.pants);
                 }
                 this.pants = armorKaart;
             }
@@ -60,7 +60,7 @@ public class ArmorSet {
             ArmorKaart armorKaart = (ArmorKaart)kaart;
             if(armorKaart.getType() == ArmorKaart.Type.BOOTS){
                 if(boots != null){
-                    client.getRugzak().add(this.boots);
+                    //client.getRugzak().add(this.boots);
                 }
                 this.boots = armorKaart;
             }
