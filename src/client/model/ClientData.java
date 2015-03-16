@@ -1,5 +1,7 @@
 package client.model;
 
+import client.exceptions.GeenVerbindingException;
+import client.exceptions.ReedsVerbindingException;
 import connectie.ConnectieStream;
 
 /**
@@ -7,6 +9,7 @@ import connectie.ConnectieStream;
  */
 public class ClientData {
     private String versie;
+    private String naam;
 
     private ConnectieStream connectieStream;
 
@@ -19,17 +22,24 @@ public class ClientData {
     }
 
     public void verbindMetStream(String ip, int port){
-        this.connectieStream = new ConnectieStream(ip, port);
-        /* TODO : maak methode aan */
+        if(!isVerbonden()){
+            this.connectieStream = new ConnectieStream(ip, port);
+        }
+        else throw new ReedsVerbindingException();
     }
 
-    public void push(){
-        /* TODO : maak methode aan */
+    public void push(String inhoud){
+        if(isVerbonden()){
+            connectieStream.schrijfOutput(inhoud);
+        }
+        else throw new GeenVerbindingException();
     }
 
     public String pull(){
-        /* TODO : maak methode aan */
-        return "";
+        if(isVerbonden()){
+            return connectieStream.leesInput();
+        }
+        else throw new GeenVerbindingException();
     }
 
     public boolean isVerbonden(){

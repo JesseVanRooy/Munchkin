@@ -26,4 +26,11 @@ public class Client {
         return clientData.getVersie();
     }
 
+    public ClientData getClientData() {
+        return clientData;
+    }
+
+    public ServerManager getServerManager() {
+        return serverManager;
+    }
 }

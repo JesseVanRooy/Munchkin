@@ -1,5 +1,7 @@
 package client.model;
 
+import client.exceptions.GeenVerbindingException;
+import client.exceptions.ReedsVerbindingException;
 import connectie.SpelStream;
 
 /**
@@ -10,16 +12,29 @@ public class ServerManager {
     private SpelStream spelStream;
 
     public ServerManager(String ip, int port) {
-        this.spelStream = new SpelStream(ip,port);
+        if(!isVerbonden()){
+            this.spelStream = new SpelStream(ip,port);
+        }
+        else throw new ReedsVerbindingException();
+
     }
 
-    public void push(){
-        /* TODO : maak methode aan */
+    public void push(String inhoud){
+        if(isVerbonden()){
+            spelStream.schrijfOutput(inhoud);
+        }
+        else throw new GeenVerbindingException();
     }
 
     public String pull(){
-        /* TODO : maak methode aan */
-        return "";
+        if(isVerbonden()){
+            return spelStream.leesInput();
+        }
+        else throw new GeenVerbindingException();
+    }
+
+    public boolean isVerbonden(){
+        return this.spelStream!=null;
     }
 
 }
