@@ -5,9 +5,13 @@ import client.Client;
  */
 public class Main {
     public static void main(String[] args) {
+
         Client client = new Client();
-        client.verbindMetServer("localhost",1337);
+        /*client.verbindMetServer("localhost",1337);
+        long begintijd = System.currentTimeMillis();
         client.getServerManager().push("PING");
-        System.out.println(client.getServerManager().pull());
+        long eindtijd = System.currentTimeMillis();
+        System.out.println(client.getServerManager().pull() + " | " + (eindtijd-begintijd) + "ms");*/
+
     }
 }

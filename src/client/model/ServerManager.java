@@ -2,18 +2,33 @@ package client.model;
 
 import client.exceptions.GeenVerbindingException;
 import client.exceptions.ReedsVerbindingException;
-import connectie.SpelStream;
+import client.exceptions.VerbindingVerstoordException;
+
+import java.io.IOException;
+import java.net.Socket;
 
 /**
  * Created by Jesse on 14/03/2015.
  */
 public class ServerManager {
 
-    private SpelStream spelStream;
+    private String ip;
+    private int port;
+
+    private Socket verbinding;
+
+    private InputPipeLine inputPipeLine;
+    private OutputPipeLine outputPipeLine;
 
     public ServerManager(String ip, int port) {
         if(!isVerbonden()){
-            this.spelStream = new SpelStream(ip,port);
+            try {
+                this.verbinding = new Socket(ip, port);
+                this.inputPipeLine = new InputPipeLine(verbinding.getInputStream());
+                this.outputPipeLine = new OutputPipeLine(verbinding.getOutputStream());
+            } catch (IOException e) {
+                throw new VerbindingVerstoordException();
+            }
         }
         else throw new ReedsVerbindingException();
 
@@ -21,20 +36,25 @@ public class ServerManager {
 
     public void push(String inhoud){
         if(isVerbonden()){
-            spelStream.schrijfOutput(inhoud);
+            outputPipeLine.schrijf(inhoud.getBytes());
         }
         else throw new GeenVerbindingException();
     }
 
     public String pull(){
         if(isVerbonden()){
-            return spelStream.leesInput();
+            StringBuilder inhoud = new StringBuilder();
+            byte[] byteArray = inputPipeLine.lees();
+            for(byte b : byteArray){
+                inhoud.append((char)b);
+            }
+            return inhoud.toString();
         }
         else throw new GeenVerbindingException();
     }
 
     public boolean isVerbonden(){
-        return this.spelStream!=null;
+        return this.verbinding!=null;
     }
 
 }

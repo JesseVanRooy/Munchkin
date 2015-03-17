@@ -1,4 +1,4 @@
-package connectie;
+package client.model;
 
 import client.exceptions.VerbindingVerstoordException;
 
@@ -11,7 +11,7 @@ import java.nio.channels.SocketChannel;
  * Created by Jesse on 14/03/2015.
  */
 public class OutputPipeLine {
-    // TODO : Socketchannels werken niet
+
     private OutputStream outputStream;
 
     public OutputPipeLine(OutputStream outputStream){
@@ -23,8 +23,7 @@ public class OutputPipeLine {
             outputStream.write(byteArray);
             outputStream.flush();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new VerbindingVerstoordException();
         }
-
     }
 }

@@ -4,6 +4,8 @@ import client.model.ClientCommandoHandler;
 import client.model.ClientData;
 import client.model.ServerManager;
 
+import javax.swing.*;
+
 /**
  * Created by Jesse on 14/03/2015.
  */
@@ -13,17 +15,15 @@ public class Client {
     private ServerManager serverManager;
 
     public Client(){
-        this.clientData = new ClientData();
+        this.clientData = new ClientData(
+                JOptionPane.showInputDialog(null,"Geef je naam in : ","Naam",JOptionPane.QUESTION_MESSAGE)
+        );
+        clientData.getProperties().updateProperties(this);
         this.commandoHandler = new ClientCommandoHandler();
     }
 
     public void verbindMetServer(String ip, int port){
         this.serverManager = new ServerManager(ip, port);
-        this.clientData.verbindMetStream(ip, port+1);
-    }
-
-    public String getVersie(){
-        return clientData.getVersie();
     }
 
     public ClientData getClientData() {

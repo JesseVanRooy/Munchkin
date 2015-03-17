@@ -2,48 +2,44 @@ package client.model;
 
 import client.exceptions.GeenVerbindingException;
 import client.exceptions.ReedsVerbindingException;
-import connectie.ConnectieStream;
+import client.exceptions.VerbindingVerstoordException;
+
+import java.io.IOException;
+import java.net.Socket;
+import java.nio.ByteBuffer;
 
 /**
  * Created by Jesse on 14/03/2015.
  */
 public class ClientData {
-    private String versie;
+
+    private static final String VERSIE = "Munchkin 1.0.0";
     private String naam;
 
-    private ConnectieStream connectieStream;
+    private ClientLog log;
+    private ClientProperties properties;
 
-    public ClientData(){
-        this.versie = "Munchkin Client - 1.0.0";
+
+    public ClientData(String naam){
+
+        this.log = new ClientLog();
+        this.naam = naam;
+        this.properties = new ClientProperties();
     }
 
     public String getVersie() {
-        return versie;
+        return VERSIE;
     }
 
-    public void verbindMetStream(String ip, int port){
-        if(!isVerbonden()){
-            this.connectieStream = new ConnectieStream(ip, port);
-        }
-        else throw new ReedsVerbindingException();
+    public String getNaam() {
+        return naam;
     }
 
-    public void push(String inhoud){
-        if(isVerbonden()){
-            connectieStream.schrijfOutput(inhoud);
-        }
-        else throw new GeenVerbindingException();
+    public ClientLog getLog() {
+        return log;
     }
 
-    public String pull(){
-        if(isVerbonden()){
-            return connectieStream.leesInput();
-        }
-        else throw new GeenVerbindingException();
+    public ClientProperties getProperties() {
+        return properties;
     }
-
-    public boolean isVerbonden(){
-        return connectieStream!=null;
-    }
-
 }
